@@ -12,7 +12,7 @@ class _BurguersListState extends State<BurguersList> {
   @override
   Widget build(BuildContext context) {
     Widget burguer = Container(
-      width: 120,
+      width: 130,
       child: Image.asset('assets/images/burger.png'),
     );
     return SliverGrid(
@@ -22,7 +22,7 @@ class _BurguersListState extends State<BurguersList> {
         return Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 20),
+              margin: EdgeInsets.only(left: 10, right: 10),
               child: GestureDetector(
                 onTap: () {},
                 child: Card(
@@ -55,6 +55,7 @@ class _BurguersListState extends State<BurguersList> {
                             Text(
                               'R\$ 25,00',
                               style: TextStyle(
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -79,8 +80,8 @@ class _BurguersListState extends State<BurguersList> {
               ),
             ),
             Positioned(
-              top: 45,
-              left: 40,
+              top: 40,
+              left: 30,
               child: GestureDetector(
                 onTap: () {},
                 child: burguer,
