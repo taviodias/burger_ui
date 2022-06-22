@@ -1,5 +1,12 @@
+import 'package:burger_ui/models/burger.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+final burger = [
+  Burger('Supernova', 'assets/images/burger.png', '28,00'),
+  Burger('Eclipse', 'assets/images/black_burger1.png', '25,00'),
+  Burger('Nebulosa', 'assets/images/chicken_burger.png', '23,00'),
+];
 
 class Burgers extends StatelessWidget {
   const Burgers({Key? key}) : super(key: key);
@@ -16,32 +23,32 @@ class Burgers extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        return Container(
+        final item = index % 3;
+        return SizedBox(
           height: 214,
           width: 150,
           child: Padding(
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
-                Image.asset(
-                  'assets/images/burger.png',
-                  height: 100,
+                Expanded(
+                  child: Image.asset(burger[item].image),
                 ),
                 Text(
-                  'Supernova',
+                  burger[item].name,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Spacer(),
+                SizedBox(height: 8),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'R\$28,00',
+                      'R\$ ${burger[item].price}',
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

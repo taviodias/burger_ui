@@ -14,7 +14,7 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 20,
+      height: 24,
       margin: EdgeInsets.only(left: 26),
       child: ListView.builder(
         itemCount: itens.length,
@@ -25,12 +25,16 @@ class _CategoriesState extends State<Categories> {
             child: (selectedItem == index)
                 ? Row(
                     children: [
-                      SvgPicture.asset('assets/images/ellipse.svg'),
+                      SvgPicture.asset(
+                        'assets/images/ellipse.svg',
+                        height: 6,
+                        width: 6,
+                      ),
                       SizedBox(width: 7),
                       Text(
                         itens[index],
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 14),
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                     ],
                   )
@@ -44,7 +48,7 @@ class _CategoriesState extends State<Categories> {
                       children: [
                         Text(
                           itens[index],
-                          style: TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: 14),
                         ),
                       ],
                     ),

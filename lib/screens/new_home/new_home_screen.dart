@@ -17,23 +17,22 @@ class NewHomeScreen extends StatelessWidget {
           children: [
             Positioned(
               child: Opacity(
-                opacity: 0.7,
+                opacity: 0.6,
                 child: Image.asset(
-                  'assets/images/milk_way.png',
-                  height: 400,
+                  'assets/images/sky.png',
                 ),
               ),
-              left: 50,
+              left: -150,
               top: -80,
             ),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   topMenu(),
-                  SizedBox(height: 32),
+                  SizedBox(height: 24),
                   Padding(
                     padding: const EdgeInsets.only(left: 26),
                     child: Text(
