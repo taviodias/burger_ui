@@ -5,7 +5,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 final burger = [
   Burger('Supernova', 'assets/images/burger.png', '28,00'),
   Burger('Eclipse', 'assets/images/black_burger1.png', '25,00'),
-  Burger('Nebulosa', 'assets/images/chicken_burger.png', '23,00'),
+  Burger('Aurora', 'assets/images/chicken_burger.png', '23,00'),
+  Burger('Quasar', 'assets/images/bacon_burger.png', '26,00'),
 ];
 
 class Burgers extends StatelessWidget {
@@ -23,7 +24,7 @@ class Burgers extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        final item = index % 3;
+        final item = index % burger.length;
         return SizedBox(
           height: 214,
           width: 150,

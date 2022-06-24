@@ -1,4 +1,5 @@
 import 'package:burger_ui/screens/new_home/burgers.dart';
+import 'package:burger_ui/screens/new_home/side_menu.dart';
 
 import 'categories.dart';
 import 'package:flutter/material.dart';
@@ -6,12 +7,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class NewHomeScreen extends StatelessWidget {
-  const NewHomeScreen({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
+  NewHomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       backgroundColor: Color(0xff242329),
+      drawer: SideMenu(),
       body: SafeArea(
         child: Stack(
           children: [
@@ -119,7 +123,7 @@ class NewHomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => _key.currentState!.openDrawer(),
             icon: SvgPicture.asset(
               'assets/images/menu_icon.svg',
             ),
