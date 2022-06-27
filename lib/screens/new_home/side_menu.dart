@@ -6,6 +6,7 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 250,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -14,16 +15,38 @@ class SideMenu extends StatelessWidget {
               color: Colors.deepPurple,
             ),
             child: Center(
-              child: Text("Teste Side Menu"),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/image.jpg'),
+                    radius: 50,
+                    child: Container(
+                      alignment: Alignment.bottomRight,
+                      child: Icon(Icons.camera_alt),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Otávio Dias',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
           ),
           ListTile(
-            title: Text('Item 1'),
-            onTap: () {},
+            title: Text(
+              'Item 1',
+              style: TextStyle(color: Colors.black),
+            ),
+            onTap: () => Navigator.pop(context),
           ),
           ListTile(
-            title: Text('Item 2'),
-            onTap: () {},
+            title: Text(
+              'Item 2',
+              style: TextStyle(color: Colors.black),
+            ),
+            onTap: () => Navigator.pop(context),
           ),
         ],
       ),
