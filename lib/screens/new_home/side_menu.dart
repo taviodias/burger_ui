@@ -12,7 +12,11 @@ class SideMenu extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.deepPurple,
+              color: Color(0xff242329),
+              image: DecorationImage(
+                image: AssetImage('assets/images/sky.png'),
+                fit: BoxFit.fill,
+              ),
             ),
             child: Center(
               child: Column(
@@ -22,7 +26,10 @@ class SideMenu extends StatelessWidget {
                     radius: 50,
                     child: Container(
                       alignment: Alignment.bottomRight,
-                      child: Icon(Icons.camera_alt),
+                      child: Icon(
+                        Icons.camera_alt,
+                        size: 16,
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
