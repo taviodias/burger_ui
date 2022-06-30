@@ -9,7 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class NewHomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-  final int _items = 1;
+  final int _items = 0;
   NewHomeScreen({Key? key}) : super(key: key);
 
   @override
