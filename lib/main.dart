@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'GothamPro',
       ),
       debugShowCheckedModeBanner: false,
-      home: DetailsBurger(),
+      home: NewHomeScreen(),
     );
   }
 }

@@ -57,11 +57,11 @@ class Burgers extends StatelessWidget {
                       height: 20,
                       width: 20,
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Color(0xff191919),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Icon(
-                        MdiIcons.plusThick,
+                        Icons.add,
                         color: Colors.white,
                         size: 14,
                       ),
