@@ -7,25 +7,25 @@ final burgers = [
   Burger(
     'Supernova',
     'assets/images/burger.png',
-    '28,00',
+    28,
     'Pão especial, 2 hambúrgueres bovinos, uma fatia de queijo cheddar, bacon em fatias, tomate e cebola em rodelas, alface, ketchup e maionese.',
   ),
   Burger(
     'Eclipse',
     'assets/images/black_burger1.png',
-    '25,00',
+    25,
     'Pão preto especial, um hámburguer bovino, uma fatia de queijo, rodelas de picles, tomate e cebola, alface, ketchup e maionese',
   ),
   Burger(
     'Aurora',
     'assets/images/chicken_burger.png',
-    '23,00',
+    23,
     'Pão especial, um hámburguer de frango, tomate em rodelas, alface e maionese.',
   ),
   Burger(
     'Quasar',
     'assets/images/bacon_burger.png',
-    '26,00',
+    26,
     'Pão especial, 2 hámburgueres bovinos, 2 fatias de queijo, fatias de bacon, rodelas de picles, mostarda e ketchup.',
   ),
 ];
@@ -77,7 +77,7 @@ class Burgers extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'R\$ ${burgers[item].price}',
+                        'R\$ ${burgers[item].price},00',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

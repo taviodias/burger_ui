@@ -126,7 +126,7 @@ class DetailsBurger extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'R\$ ${burger.price}',
+                              'R\$ ${burger.price},00',
                               style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
