@@ -1,12 +1,33 @@
 import 'package:burger_ui/models/burger.dart';
+import 'package:burger_ui/screens/deatils/details_burger.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-final burger = [
-  Burger('Supernova', 'assets/images/burger.png', '28,00'),
-  Burger('Eclipse', 'assets/images/black_burger1.png', '25,00'),
-  Burger('Aurora', 'assets/images/chicken_burger.png', '23,00'),
-  Burger('Quasar', 'assets/images/bacon_burger.png', '26,00'),
+final burgers = [
+  Burger(
+    'Supernova',
+    'assets/images/burger.png',
+    '28,00',
+    'Pão especial, 2 hambúrgueres bovinos, uma fatia de queijo cheddar, bacon em fatias, tomate e cebola em rodelas, alface, ketchup e maionese.',
+  ),
+  Burger(
+    'Eclipse',
+    'assets/images/black_burger1.png',
+    '25,00',
+    'Pão preto especial, um hámburguer bovino, uma fatia de queijo, rodelas de picles, tomate e cebola, alface, ketchup e maionese',
+  ),
+  Burger(
+    'Aurora',
+    'assets/images/chicken_burger.png',
+    '23,00',
+    'Pão especial, um hámburguer de frango, tomate em rodelas, alface e maionese.',
+  ),
+  Burger(
+    'Quasar',
+    'assets/images/bacon_burger.png',
+    '26,00',
+    'Pão especial, 2 hámburgueres bovinos, 2 fatias de queijo, fatias de bacon, rodelas de picles, mostarda e ketchup.',
+  ),
 ];
 
 class Burgers extends StatelessWidget {
@@ -24,51 +45,61 @@ class Burgers extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        final item = index % burger.length;
+        final item = index % burgers.length;
         return SizedBox(
-          height: 214,
-          width: 150,
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Image.asset(burger[item].image),
-                ),
-                Text(
-                  burger[item].name,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsBurger(
+                    burger: burgers[index],
                   ),
                 ),
-                SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'R\$ ${burger[item].price}',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Image.asset(burgers[item].image),
+                  ),
+                  Text(
+                    burgers[item].name,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Container(
-                      height: 20,
-                      width: 20,
-                      decoration: BoxDecoration(
-                        color: Color(0xff191919),
-                        borderRadius: BorderRadius.circular(50),
+                  ),
+                  SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'R\$ ${burgers[item].price}',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 14,
+                      Container(
+                        height: 20,
+                        width: 20,
+                        decoration: BoxDecoration(
+                          color: Color(0xff191919),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 14,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );
